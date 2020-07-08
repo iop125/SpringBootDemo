@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo06" />
         <module name="demo05" />
         <module name="demo04" />
         <module name="demo03" />
@@ -22,6 +23,7 @@
       <module name="demo03 (1)" target="1.8" />
       <module name="demo04" target="1.8" />
       <module name="demo05" target="14" />
+      <module name="demo06" target="14" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +35,7 @@
       <module name="demo03 (1)" options="-parameters" />
       <module name="demo04" options="-parameters" />
       <module name="demo05" options="-parameters" />
+      <module name="demo06" options="-parameters" />
     </option>
   </component>
 </project>
