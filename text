@@ -4,9 +4,11 @@ demo04=加载自定义内容， 跳转6
 demo05=jsp  跳转7
 demo06=
 demo07=webflux
-        Mono 表示包含0或一个异步序列
-
-
+         Mono 表示包含0或一个异步序列
+         Mono.fromSupplier(()->doSome());
+         Mono.just("monoHandle");
+         Flux表示包含多个异步序列
+demo08= 异步asynservlet
 1.SomeController 第一个程序 初始化的一个程序
     SpringbootApplication这个是启动的主方法
 2。配置的两种方式
