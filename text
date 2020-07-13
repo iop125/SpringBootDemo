@@ -2,7 +2,8 @@ demo01=搭建项目
 demo02=多环境配置  可以通过在执行jar的时候 添加--spring.profiles.active=dev来选择环境
 demo04=加载自定义内容， 跳转6
 demo05=jsp  跳转7
-
+demo06=
+demo07=webflux
 
 1.SomeController 第一个程序 初始化的一个程序
     SpringbootApplication这个是启动的主方法
