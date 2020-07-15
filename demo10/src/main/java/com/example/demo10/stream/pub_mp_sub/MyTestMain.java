@@ -1,5 +1,7 @@
 package com.example.demo10.stream.pub_mp_sub;
 
+import io.netty.channel.ChannelOutboundBuffer;
+
 import java.util.concurrent.SubmissionPublisher;
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +13,7 @@ public class MyTestMain {
         //定义订阅者
         NewSubscriber newSubscriber = new NewSubscriber();
         //创建处理器对消息进行转换
-       MessageProcessor MessageProcessor = new ChannelOutboundBuffer.MessageProcessor();
+       ChannelOutboundBuffer.MessageProcessor MessageProcessor = new ChannelOutboundBuffer.MessageProcessor();
 
                 //创建发布者和订阅者的订阅关系
                 publisher.subscribe(subscriber);
