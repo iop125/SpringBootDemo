@@ -13,10 +13,11 @@ public class MyTestMain {
         //定义订阅者
         NewSubscriber newSubscriber = new NewSubscriber();
         //创建处理器对消息进行转换
-       ChannelOutboundBuffer.MessageProcessor MessageProcessor = new ChannelOutboundBuffer.MessageProcessor();
-
-                //创建发布者和订阅者的订阅关系
-                publisher.subscribe(subscriber);
+        MessageProcessor messageProcessor= new MessageProcessor();
+        //创建发布者和消息处理器的订阅关系
+        publisher.subscribe(messageProcessor);
+        //创建消息处理器和订阅者的订阅关系
+        messageProcessor.subscribe(newSubscriber);
         //生产消息发布
         for (int i = 0; i < 300; i++) {
             System.out.println("生产第"+i);
@@ -24,7 +25,7 @@ public class MyTestMain {
         }
         publisher.close();
         try {
-            TimeUnit.SECONDS.sleep(1000);
+            TimeUnit.SECONDS.sleep(40);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

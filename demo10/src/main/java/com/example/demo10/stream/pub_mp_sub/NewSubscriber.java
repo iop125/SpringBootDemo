@@ -5,7 +5,7 @@ import java.util.concurrent.Flow;
 import java.util.concurrent.TimeUnit;
 
 //定义订阅者
-public class NewSubscriber implements Flow.Subscriber<Integer> {
+public class NewSubscriber implements Flow.Subscriber<String> {
     //声明订阅关系
     private Flow.Subscription subscription;
     //当订阅关系建立时该方法会被发布者自动调用
@@ -20,10 +20,10 @@ public class NewSubscriber implements Flow.Subscriber<Integer> {
     }
     //订阅者每接收一次订阅消息数据时，该方法会被发布者自动调用一次
     @Override
-    public void onNext(Integer item) {
+    public void onNext(String item) {
         System.out.println("消息为="+item);
         try {
-            TimeUnit.MILLISECONDS.sleep(110);
+            TimeUnit.MILLISECONDS.sleep(0);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class NewSubscriber implements Flow.Subscriber<Integer> {
     //当令牌的所有消息全部正常处理完毕后调用
     @Override
     public void onComplete() {
-        System.out.println("sssssss=");
+        System.out.println("令牌的所有消息全部正常处理完毕后=");
 
     }
 }
