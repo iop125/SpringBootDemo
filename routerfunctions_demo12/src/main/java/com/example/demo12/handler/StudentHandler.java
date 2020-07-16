@@ -1,7 +1,7 @@
 package com.example.demo12.handler;
 
 import com.example.demo12.repository.StudentRepository;
-import com.example.demo12.vo.Student;
+import com.example.demo12.bean.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

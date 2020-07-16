@@ -1,6 +1,6 @@
 package com.example.demo12.repository;
 
-import com.example.demo12.vo.Student;
+import com.example.demo12.bean.Student;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 

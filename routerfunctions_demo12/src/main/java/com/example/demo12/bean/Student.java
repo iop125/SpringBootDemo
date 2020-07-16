@@ -1,9 +1,8 @@
-package com.example.demo12.vo;
+package com.example.demo12.bean;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.validation.annotation.Validated;
 
 @Data
 @Document(collection = "t_student")//指定在mongodb中的表明，没有会自动生成
