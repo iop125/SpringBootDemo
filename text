@@ -49,11 +49,17 @@ demo10= reactive strem是webflux的基础
             Processor，即处理器，充当订阅者和发布者的处理阶段。Processor 接口继承了 Publisher 和 Subscriber 接口。它用于转换发布者/订阅者管道中的元素。
             Processor<T, R>会将来自于发 布者的 T 类型的消息数据，接收并转换为 R 类型的数据，并将转换后的 R 类型数据发布给订 阅者。一个发布者可以拥有多个处理者。
 
-demo11= webflux开发  看pdf
+demo11= webflux开发  看pdf  传统的开发方式
         表单提交
         1。接入HiddenHttpMethodFilter过滤器
         2。from中添加<input type="hidden" value="DELETE" name="_method"/>
 
+        校验逻辑
+        自定义：
+demo12= webflux开发  看pdf  传统的开发方式
+        表单提交
+        1。接入HiddenHttpMethodFilter过滤器
+        2。from中添加<input type="hidden" value="DELETE" name="_method"/>
 1.SomeController 第一个程序 初始化的一个程序
     SpringbootApplication这个是启动的主方法
 2。配置的两种方式

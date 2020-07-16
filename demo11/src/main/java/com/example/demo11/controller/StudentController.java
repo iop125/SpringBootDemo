@@ -1,6 +1,7 @@
 package com.example.demo11.controller;
 
-import com.example.demo11.bean.ResponseEntity;
+import com.example.demo11.util.NameValitdateUtil;
+import org.springframework.http.ResponseEntity;
 import com.example.demo11.bean.Student;
 import com.example.demo11.repository.StudentRepository;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/student")
@@ -29,6 +31,9 @@ public class StudentController {
 
     @PostMapping(value = "/save")
     public Mono<Student> save(){
+        Student student = new Student();
+        student.setName("");
+        NameValitdateUtil.validateName(student.getName());
         return studentRepository.save(new Student());
     }
 
@@ -53,9 +58,9 @@ public class StudentController {
                 .defaultIfEmpty(new ResponseEntity<Void>(HttpStatus.NOT_FOUND));
     }
     @PutMapping(value = "/update")
-    public Mono<ResponseEntity<Student>> update(){
+    public Mono<ResponseEntity<Student>> update(@PathVariable("id")String id ,@Valid @RequestBody Student student){
         //map 转换数据参数
-        return studentRepository.findById("").flatMap(stu->studentRepository.save(stu)).map(stu->new ResponseEntity<Student>(HttpStatus.OK)).defaultIfEmpty(new ResponseEntity<Student>(HttpStatus.NOT_FOUND));
+        return studentRepository.findById(id).flatMap(stu->studentRepository.save(student)).map(stu->new ResponseEntity<Student>(HttpStatus.OK)).defaultIfEmpty(new ResponseEntity<Student>(HttpStatus.NOT_FOUND));
     }
     @PutMapping(value = "/age/{below}/{top}")
     public Flux<Student> findByAge(@PathVariable("below") int below,@PathVariable("top") int top){
