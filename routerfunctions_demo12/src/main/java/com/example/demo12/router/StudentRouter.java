@@ -23,13 +23,8 @@ public class StudentRouter {
                         RouterFunctions.route(RequestPredicates.GET("/all"), handler::findAllHandle)
                                         .andRoute(RequestPredicates.POST("/save")
                                                                     .and(RequestPredicates.accept(MediaType.APPLICATION_JSON_UTF8)),
-                                                  handler::saveHandle)
+                                                  handler::saveHandleValide)
                                         .andRoute(RequestPredicates.DELETE("/del/{id}"), handler::delHandle)
                                         .andRoute(RequestPredicates.PUT("/update/{id}"), handler::updateHandle));
     }
 }
-
-
-
-
-
