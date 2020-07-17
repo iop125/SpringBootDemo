@@ -28,3 +28,8 @@ public class StudentRouter {
                                         .andRoute(RequestPredicates.PUT("/update/{id}"), handler::updateHandle));
     }
 }
+
+
+
+
+
